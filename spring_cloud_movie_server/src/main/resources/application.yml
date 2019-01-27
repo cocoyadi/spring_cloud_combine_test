@@ -1,0 +1,32 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: provider-movie
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+eureka:  # 注册服务节点到eureka
+  client:
+    service-url:
+      defaultZone: http://user:password123@localhost:8081/eureka/,http://user:password123@localhost:8082/eureka/   #将服务节点注册到eureka集群上,带有用户认证信息
+    healthcheck:
+      enabled: true   #开启健康检查状态
+  instance:
+    prefer-ip-address: true  #将服务节点的ip注册到eureka server上
+
+info:    #添加actuator监控的端点信息，通过http://localhost:8080/info访问
+  app:
+    name: "@project.artifactId@"
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      source: "@java.version@"
+      target: "@java.version@"
+
+
+provider-user:   #可以以应用的维度来设置负载均衡规则
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule   #设置负载均衡规则为随机

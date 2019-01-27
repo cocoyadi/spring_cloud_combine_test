@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring_cloud_eureka_server" />
-        <module name="spring_cloud_movie_server" />
-        <module name="spring_cloud_user_server" />
+        <module name="spring_cloud_eureka_ha_server" />
+        <module name="spring_cloud_user_server_bak" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring_cloud_eureka_server" target="1.8" />
+      <module name="spring_cloud_movie_server" target="1.8" />
+      <module name="spring_cloud_user_server" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

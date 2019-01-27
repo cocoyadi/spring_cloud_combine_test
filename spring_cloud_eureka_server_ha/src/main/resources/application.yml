@@ -1,12 +1,12 @@
 server:
-  port: 8081
+  port: 8082
 eureka:
   client:
     service-url:
-      defaultZone: http://user:password123@localhost:8082/eureka/   #注册到其他的eureka机器上,如果有设置验证信息，不要忘了带上验证信息
+      defaultZone: http://user:password123@localhost:8081/eureka/   #注册到其他的eureka机器上,如果有设置验证信息，不要忘了带上验证信息
 spring:
   application:
-    name: euraka_server
+    name: euraka_ha_server
 
 info:    #添加actuator监控的端点信息，通过http://localhost:8080/info访问
   app:
