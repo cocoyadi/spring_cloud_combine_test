@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <resourceExtensions />
     <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="spring_cloud_eureka_ha_server" />
+        <module name="spring_cloud_movie_server" />
         <module name="spring_cloud_user_server_bak" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring_cloud_combine_test" target="1.5" />
+      <module name="spring_cloud_eureka_ha_server" target="1.8" />
       <module name="spring_cloud_eureka_server" target="1.8" />
       <module name="spring_cloud_movie_server" target="1.8" />
       <module name="spring_cloud_user_server" target="1.8" />
+      <module name="spring_cloud_user_server_bak" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

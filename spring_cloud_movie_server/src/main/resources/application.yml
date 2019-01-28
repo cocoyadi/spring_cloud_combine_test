@@ -9,6 +9,7 @@ logging:
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.coco.client.UserFeignClient: DEBUG   # 将feign客户端的日志级别设置为debug级别，因为feign的日志只对debug级别的日志起作用.
 eureka:  # 注册服务节点到eureka
   client:
     service-url:

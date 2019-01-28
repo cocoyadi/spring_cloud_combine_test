@@ -12,7 +12,6 @@
         <module>spring_cloud_eureka_server</module>
         <module>spring_cloud_user_server</module>
         <module>spring_cloud_movie_server</module>
-        <module>spring_cloud_movie_server</module>
         <module>spring_cloud_eureka_server_ha</module>
         <module>spring_cloud_user_server_bak</module>
     </modules>
