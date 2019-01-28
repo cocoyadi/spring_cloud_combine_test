@@ -1,0 +1,13 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: hystrix-dashboard
+
+info:    #添加actuator监控的端点信息，通过http://localhost:8080/info访问
+  app:
+    name: "@project.artifactId@"
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      source: "@java.version@"
+      target: "@java.version@"
