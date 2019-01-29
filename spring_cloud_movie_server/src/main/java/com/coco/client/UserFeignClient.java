@@ -1,11 +1,8 @@
 package com.coco.client;
 
 import com.coco.Entity.User;
-import com.coco.configuration.FeignConfiguration;
-import com.coco.fallback.FeignClientFallBack;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.ribbon.proxy.annotation.Http;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import com.coco.fallback.FeignClientFallBackFactory;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -17,10 +14,11 @@ import org.springframework.web.bind.annotation.*;
  * 添加feign客户端的失败调用回退
  * @date 2019/1/7  16:56
  **/
-@FeignClient(name = "provider-user", configuration = FeignConfiguration.class, fallback = FeignClientFallBack.class)
+@FeignClient(name = "provider-user",fallbackFactory = FeignClientFallBackFactory.class)
 public interface UserFeignClient {
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    //FeignClient接口如使用@PathVariable ，必须指定value属性
     User findById(@PathVariable("id") Long id);
 
     @RequestMapping(value = "/getUser",method = RequestMethod.GET)

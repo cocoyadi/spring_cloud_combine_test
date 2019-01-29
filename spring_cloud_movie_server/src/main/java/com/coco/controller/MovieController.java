@@ -2,8 +2,6 @@ package com.coco.controller;
 
 import com.coco.Entity.User;
 import com.coco.client.UserFeignClient;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -4,14 +4,7 @@ spring:
   application:
     name: provider-user   #假设为user的多节点
   jpa:
-    generate-ddl: false
     show-sql: true
-    hibernate:
-      ddl-auto: none
-  datasource:
-    platform: h2
-    schema: classpath:sql/schema.sql
-    data: classpath:sql/data.sql
 
 logging:
   level:
@@ -19,6 +12,14 @@ logging:
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+
+management:
+  endpoint:
+    health:
+      show-details: always   # 设置actuator是否展示健康检查详情
+    web:
+      exposure:
+        include: metrics    # 敏感节点默认不暴露，如需暴露，则需配置，暴露metrics端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
 
 info:    #添加actuator监控的端点信息，通过http://localhost:8080/info访问
   app:
@@ -28,15 +29,15 @@ info:    #添加actuator监控的端点信息，通过http://localhost:8080/info
       source: "@java.version@"
       target: "@java.version@"
 
-
-eureka:  # 注册服务节点到eureka
-  client:
-    service-url:
-      defaultZone: http://user:password123@localhost:8081/eureka/,http://user:password123@localhost:8082/eureka/   #将服务节点注册到eureka集群上,带有用户认证信息
-    healthcheck:
-        enabled: true   #开启健康检查状态
-  instance:
-    prefer-ip-address: true  #将服务节点的ip注册到eureka server上
-    secure-virtual-host-name: provider-user  #配置服务节点的虚拟主机名
+#
+#eureka:  # 注册服务节点到eureka
+#  client:
+#    service-url:
+#      defaultZone: http://user:password123@localhost:8081/eureka/,http://user:password123@localhost:8082/eureka/   #将服务节点注册到eureka集群上,带有用户认证信息
+#    healthcheck:
+#        enabled: true   #开启健康检查状态
+#  instance:
+#    prefer-ip-address: true  #将服务节点的ip注册到eureka server上
+#    secure-virtual-host-name: provider-user  #配置服务节点的虚拟主机名
 
 

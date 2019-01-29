@@ -5,6 +5,8 @@ import com.coco.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 /**
  * @author zhangxiaoxun
  * @date 2019/1/5  21:10
@@ -20,9 +22,8 @@ public class UserController {
      * @return
      */
     @GetMapping("/{id}")
-    public User findById(@PathVariable Long id){
-        User user = userRepository.findOne(id);
-        return user;
+    public Optional<User> findById(@PathVariable Long id){
+        return this.userRepository.findById(id);
     }
 
 

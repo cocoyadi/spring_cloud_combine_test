@@ -7,6 +7,10 @@ eureka:
 spring:
   application:
     name: euraka_server
+  security:   #设置服务中心的访问账号和密码
+    user:
+      name: user
+      password: password123
 
 info:    #添加actuator监控的端点信息，通过http://localhost:8080/info访问
   app:
@@ -16,9 +20,3 @@ info:    #添加actuator监控的端点信息，通过http://localhost:8080/info
       source: "@java.version@"
       target: "@java.version@"
 
-security:  #为eureka server添加基于HTTP BASIC的安全认证
-  basic:
-    enabled: true
-  user:
-    name: user
-    password: password123
