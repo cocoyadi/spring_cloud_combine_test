@@ -12,7 +12,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  **/
 @SpringBootApplication //从Edgware开始，@EnableDiscoveryClient注解省略的情况下也可以使用eureka
 @EnableFeignClients    //使用Feign实现rest接口调用
-@EnableHystrix   //调用hystirx容错
 @EnableCircuitBreaker   //配置整合hystrix监控
 public class MovieApplication {
 

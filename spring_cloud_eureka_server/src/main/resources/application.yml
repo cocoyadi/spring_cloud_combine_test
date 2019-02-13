@@ -20,3 +20,8 @@ info:    #添加actuator监控的端点信息，通过http://localhost:8080/info
       source: "@java.version@"
       target: "@java.version@"
 
+management:   #暴露hystrix.stream节点
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream'

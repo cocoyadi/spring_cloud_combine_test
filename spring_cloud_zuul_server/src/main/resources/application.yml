@@ -1,0 +1,9 @@
+server:
+  port: 8058
+spring:
+  application:
+    name: zuul-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password123@localhost:8081/eureka/,http://user:password123@localhost:8082/eureka/

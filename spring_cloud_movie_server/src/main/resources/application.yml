@@ -6,9 +6,6 @@ spring:
 logging:
   level:
     root: INFO
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.coco.client.UserFeignClient: DEBUG   # 将feign客户端的日志级别设置为debug级别，因为feign的日志只对debug级别的日志起作用.
 eureka:  # 注册服务节点到eureka
   client:
@@ -20,14 +17,12 @@ eureka:  # 注册服务节点到eureka
     prefer-ip-address: true  #将服务节点的ip注册到eureka server上
 
 management:
-  endpoint:
-    health:
-      show-details: always   # 设置actuator是否展示健康检查详情
+  endpoints:
     web:
       exposure:
-        include: metrics,'hystrix.stream'    # 暴露metrics端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
+        include: 'hystrix.stream'
 
-info:    #添加actuator监控的端点信息，通过http://localhost:8080/info访问
+info:    #添加actuator监控的端点信息，通过http://localhost:8086/info访问
   app:
     name: "@project.artifactId@"
     encoding: "@project.build.sourceEncoding@"
@@ -46,15 +41,6 @@ feign:
         readTimeout: 5000     # 读取超时，相当于Request.Options
         # 配置Feign的日志级别，相当于代码配置方式中的Logger
         loggerLevel: full
-        # Feign的错误解码器，相当于代码配置方式中的ErrorDecoder
-        errorDecoder: com.example.SimpleErrorDecoder
-        # 配置重试，相当于代码配置方式中的Retryer，一般不建议使用feign的重试器，默认使用ribbon的重试器
-        retryer: com.example.SimpleRetryer
-        # 配置拦截器，相当于代码配置方式中的RequestInterceptor
-         requestInterceptors:
-          - com.example.FooRequestInterceptor
-          - com.example.BarRequestInterceptor
-        decode404: false
 
 
 provider-user:   #可以以应用的维度来设置负载均衡规则（属性配置的规则优于代码配置，全局配置则把服务名去掉即可）

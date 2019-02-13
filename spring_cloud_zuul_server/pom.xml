@@ -2,11 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <groupId>com.coco</groupId>
     <version>1.0-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring_cloud_user_server_bak</artifactId>
+    <artifactId>spring_cloud_zuul_server</artifactId>
 
     <!-- 约束spring boot的版本 -->
     <parent>
@@ -28,7 +27,6 @@
         </dependencies>
     </dependencyManagement>
 
-
     <!-- 最好约束一下项目的java版本和字符编码 -->
     <properties>
         <java.version>1.8</java.version>
@@ -37,37 +35,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <!-- 强大的嵌入式数据库，可做测试使用 -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-
-        <!-- 服务注册到eureka server上 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
-        <!-- 整合actuator，添加监控端点 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 
@@ -79,13 +56,9 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <!-- 包含Main Class -->
                 <configuration>
-                    <mainClass>com.coco.UserApplication</mainClass>
+                    <mainClass>com.coco.Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-
-
-
 </project>

@@ -14,7 +14,7 @@ import java.util.stream.Stream;
  * @author zhangxiaoxun
  * @date 2018/12/8  19:10
  **/
-@SpringBootApplication //从Edgware开始，@EnableDiscoveryClient注解省略的情况下也可以使用eureka
+@SpringBootApplication  //从Edgware开始，@EnableDiscoveryClient注解省略的情况下也可以使用eureka
 public class UserApplication {
 
     public static void main(String[] args){

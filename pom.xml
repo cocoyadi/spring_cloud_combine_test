@@ -15,6 +15,7 @@
         <module>spring_cloud_eureka_server_ha</module>
         <module>spring_cloud_user_server_bak</module>
         <module>spring_cloud_hystrix_dashboard</module>
+        <module>spring_cloud_zuul_server</module>
     </modules>
 
 
