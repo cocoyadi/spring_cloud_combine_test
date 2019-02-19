@@ -16,6 +16,8 @@
         <module>spring_cloud_user_server_bak</module>
         <module>spring_cloud_hystrix_dashboard</module>
         <module>spring_cloud_zuul_server</module>
+        <module>config_server</module>
+        <module>spring_cloud_config_server</module>
     </modules>
 
 

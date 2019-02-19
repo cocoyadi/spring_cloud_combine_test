@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: provider-movie    # 对应config server所获取的配置文件的{application}
+  cloud:
+    config:
+      uri: http://localhost:8011/
+      profile: dev            # profile对应config server所获取的配置文件中的{profile}

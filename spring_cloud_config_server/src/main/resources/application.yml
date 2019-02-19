@@ -1,0 +1,15 @@
+server:
+  port: 8011
+spring:
+  application:
+    name: config_server
+  cloud:
+    config:
+      server:
+        git:
+          # Git仓库地址
+          uri: https://github.com/cocoyadi/spring_cloud_config.git
+          # Git仓库账号
+          username: 569424717@qq.com
+          # Git仓库密码
+          password: xiaoxun694686

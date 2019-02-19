@@ -7,17 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring_cloud_config_server" />
-        <module name="spring_cloud_eureka_ha_server" />
-        <module name="spring_cloud_eureka_server" />
-        <module name="spring_cloud_hystrix_dashboard" />
-        <module name="spring_cloud_movie_server" />
-        <module name="spring_cloud_user_server" />
-        <module name="spring_cloud_user_server_bak" />
-        <module name="spring_cloud_zuul_server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="config_server" target="1.8" />
+      <module name="spring_cloud_config_server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

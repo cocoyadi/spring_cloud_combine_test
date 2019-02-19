@@ -2,8 +2,18 @@ server:
   port: 8058
 spring:
   application:
-    name: zuul-server
-eureka:
-  client:
-    service-url:
-      defaultZone: http://user:password123@localhost:8081/eureka/,http://user:password123@localhost:8082/eureka/
+    name: zuul_server
+  cloud:
+    config:
+      server:
+        git:
+          # Git仓库地址
+          uri: https://github.com/cocoyadi/spring-cloud-config.git
+          # Git仓库账号
+          username: 569424717@qq.com
+          # Git仓库密码
+          password: xiaoxun694686
+          #对应配置文件中的profile
+          profile: dev
+          #git上的版本分支
+          label: master

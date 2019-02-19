@@ -4,24 +4,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://user:password123@localhost:8081/eureka/   #注册到其他的eureka机器上,如果有设置验证信息，不要忘了带上验证信息
-spring:
-  application:
-    name: euraka_ha_server
-  security:   #设置服务中心的访问账号和密码（安全验证）
-    user:
-      name: user
-      password: password123
 
-info:    #添加actuator监控的端点信息，通过http://localhost:8080/info访问
-  app:
-    name: "@project.artifactId@"
-    encoding: "@project.build.sourceEncoding@"
-    java:
-      source: "@java.version@"
-      target: "@java.version@"
-
-management:   #暴露hystrix.stream节点
-  endpoints:
-    web:
-      exposure:
-        include: 'hystrix.stream'

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: eureka_server
+  cloud:
+    config:
+      uri: http://localhost:8011/
+      profile: dev            # profile对应config server所获取的配置文件中的{profile}
+      label: master

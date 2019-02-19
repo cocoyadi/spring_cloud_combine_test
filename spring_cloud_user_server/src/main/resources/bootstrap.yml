@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: provider-user
+  cloud:
+    config:
+      uri: http://localhost:8011/
+      profile: dev
